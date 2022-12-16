@@ -151,7 +151,11 @@ cmp.setup {
   },
 }
 
-require("nvim-tree").setup {}
+require("nvim-tree").setup {
+  view = {
+    adaptive_size=true
+  }
+}
 require("bufferline").setup {}
 require('gitsigns').setup {}
 local null_ls = require("null-ls")
