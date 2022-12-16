@@ -6,6 +6,8 @@ set shiftwidth=2
 set guicursor=
 set termguicolors
 
+let g:python_recommended_style = 0
+
 colorscheme darkblue
 
 lua << EOF
