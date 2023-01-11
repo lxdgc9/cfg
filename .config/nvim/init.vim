@@ -33,7 +33,12 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use 'williamboman/mason.nvim' 
-  use 'nvim-tree/nvim-tree.lua'
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+  }
   use 'lewis6991/gitsigns.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'akinsho/bufferline.nvim'
@@ -236,7 +241,6 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 EOF
-
 
 lua <<EOF
 -- Format on save
