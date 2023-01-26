@@ -8,8 +8,6 @@ set termguicolors
 
 let g:python_recommended_style=0
 
-colorscheme darkblue
-
 lua << EOF
 local ensure_packer = function()
   local fn = vim.fn
@@ -58,6 +56,7 @@ return require('packer').startup(function(use)
       'nvim-lua/plenary.nvim'
     }
   }
+  use "bluz71/vim-moonfly-colors"
   
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -221,3 +220,5 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 EOF
+
+colorscheme moonfly
