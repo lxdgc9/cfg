@@ -8,8 +8,6 @@ set termguicolors
 
 let g:python_recommended_style=0
 
-colorscheme darkblue
-
 lua << EOF
 local ensure_packer = function()
   local fn = vim.fn
@@ -30,6 +28,8 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
   use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use 'williamboman/mason.nvim' 
@@ -155,6 +155,8 @@ cmp.setup {
   }),
   sources = {
     { name = 'nvim_lsp' },
+    { name = 'buffer' },
+    { name = 'path' },
     { name = 'luasnip' },
   },
 }
