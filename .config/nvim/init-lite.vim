@@ -8,6 +8,8 @@ set termguicolors
 
 let g:python_recommended_style=0
 
+colorscheme darkblue
+
 lua << EOF
 local ensure_packer = function()
   local fn = vim.fn
@@ -33,7 +35,10 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
   use 'williamboman/mason.nvim' 
-  use 'nvim-tree/nvim-tree.lua'
+  use {
+    'nvim-tree/nvim-tree.lua',
+    tag = 'nightly'
+  }
   use 'lewis6991/gitsigns.nvim'
   use {
     'jose-elias-alvarez/null-ls.nvim',
