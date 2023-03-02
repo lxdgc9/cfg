@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
     requires = {
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
     },
+    tag = 'nightly',
   }
   use 'lewis6991/gitsigns.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
@@ -169,11 +170,20 @@ cmp.setup {
   },
 }
 
+local function open_nvim_tree()
+  -- open the tree
+  require("nvim-tree.api").tree.open()
+end
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+
 require("nvim-tree").setup {
   view = {
     adaptive_size=true
   }
 }
+
+
 require("bufferline").setup {}
 require('gitsigns').setup {}
 local null_ls = require("null-ls")
