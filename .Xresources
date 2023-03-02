@@ -1,0 +1,7 @@
+xterm*foreground: white
+xterm*background: black
+xterm*faceName: xft:Monofur Nerd Font Mono
+xterm*faceSize: 10
+xterm*selectToClipboard: true
+xterm*VT100.Translations: #override \
+	Ctrl <KeyPress> V: insert-selection(CLIPBOARD, CUT_BUFFER0, PRIMARY)
